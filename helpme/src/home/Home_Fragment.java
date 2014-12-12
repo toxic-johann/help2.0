@@ -22,7 +22,7 @@ public class Home_Fragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mView = View.inflate(getActivity(), R.layout.home_fragment, null);
-
+		
 		mListView = (ListView) mView.findViewById(R.id.home_fragment_listview);
 
 		mHomeListViewAdapter = new Home_ListView_Adapter(getActivity(),
