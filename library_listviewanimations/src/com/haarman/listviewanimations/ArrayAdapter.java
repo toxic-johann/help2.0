@@ -99,7 +99,7 @@ public abstract class ArrayAdapter<T> extends BaseAdapter implements DynamicList
 	 * Appends all of the elements to the end of the list, in the order that
 	 * they are specified.
 	 */
-	public void addAll(T... items) {
+	public void addAll(@SuppressWarnings("unchecked") T... items) {
 		Collections.addAll(mItems, items);
 		notifyDataSetChanged();
 	}
@@ -117,7 +117,7 @@ public abstract class ArrayAdapter<T> extends BaseAdapter implements DynamicList
 	 * Inserts all of the elements into the list, starting at the specified
 	 * position.
 	 */
-	public void addAll(int position, T... items) {
+	public void addAll(int position, @SuppressWarnings("unchecked") T... items) {
 		for (int i = position; i < (items.length + position); i++) {
 			mItems.add(i, items[i]);
 		}

@@ -17,25 +17,27 @@ public final class R {
     }
     public static final class drawable {
         public static final int all_pressed=0x7f020000;
-        public static final int discover=0x7f020001;
-        public static final int discover_press=0x7f020002;
-        public static final int head=0x7f020003;
-        public static final int help_press=0x7f020004;
-        public static final int home=0x7f020005;
-        public static final int home_press=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int list_item_bg=0x7f020008;
-        public static final int location=0x7f020009;
-        public static final int me=0x7f02000a;
-        public static final int me_press=0x7f02000b;
-        public static final int people=0x7f02000c;
-        public static final int people_press=0x7f02000d;
-        public static final int selector_mood_discover=0x7f02000e;
-        public static final int selector_mood_help=0x7f02000f;
-        public static final int selector_mood_home=0x7f020010;
-        public static final int selector_mood_me=0x7f020011;
-        public static final int selector_mood_people=0x7f020012;
-        public static final int user_head=0x7f020013;
+        public static final int card_float=0x7f020001;
+        public static final int card_normal=0x7f020002;
+        public static final int discover=0x7f020003;
+        public static final int discover_press=0x7f020004;
+        public static final int head=0x7f020005;
+        public static final int help_press=0x7f020006;
+        public static final int home=0x7f020007;
+        public static final int home_press=0x7f020008;
+        public static final int ic_launcher=0x7f020009;
+        public static final int list_item_bg=0x7f02000a;
+        public static final int location=0x7f02000b;
+        public static final int me=0x7f02000c;
+        public static final int me_press=0x7f02000d;
+        public static final int people=0x7f02000e;
+        public static final int people_press=0x7f02000f;
+        public static final int selector_mood_discover=0x7f020010;
+        public static final int selector_mood_help=0x7f020011;
+        public static final int selector_mood_home=0x7f020012;
+        public static final int selector_mood_me=0x7f020013;
+        public static final int selector_mood_people=0x7f020014;
+        public static final int user_head=0x7f020015;
     }
     public static final class id {
         public static final int choose_health=0x7f070002;
