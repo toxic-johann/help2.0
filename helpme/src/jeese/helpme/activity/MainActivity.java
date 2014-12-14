@@ -1,10 +1,10 @@
 package jeese.helpme.activity;
 
-import home.Home_Fragment;
 import jeese.helpme.R;
 import jeese.helpme.fragment.Discover_Fragment;
 import jeese.helpme.fragment.Me_Fragment;
 import jeese.helpme.fragment.People_Fragment;
+import jeese.helpme.home.Home_Fragment;
 import jeese.helpme.util.DummyTabContent;
 import android.app.ActionBar;
 import android.app.Dialog;

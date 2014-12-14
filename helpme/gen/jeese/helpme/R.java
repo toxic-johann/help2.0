@@ -11,7 +11,11 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int green=0x7f040004;
+        public static final int light_blue=0x7f040003;
         public static final int light_grey=0x7f040000;
+        public static final int orange=0x7f040005;
+        public static final int red=0x7f040006;
         public static final int super_light_grey=0x7f040001;
         public static final int white=0x7f040002;
     }
@@ -21,52 +25,55 @@ public final class R {
         public static final int card_normal=0x7f020002;
         public static final int discover=0x7f020003;
         public static final int discover_press=0x7f020004;
-        public static final int head=0x7f020005;
-        public static final int help_press=0x7f020006;
-        public static final int home=0x7f020007;
-        public static final int home_press=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int list_item_bg=0x7f02000a;
-        public static final int location=0x7f02000b;
-        public static final int me=0x7f02000c;
-        public static final int me_press=0x7f02000d;
-        public static final int people=0x7f02000e;
-        public static final int people_press=0x7f02000f;
-        public static final int selector_mood_discover=0x7f020010;
-        public static final int selector_mood_help=0x7f020011;
-        public static final int selector_mood_home=0x7f020012;
-        public static final int selector_mood_me=0x7f020013;
-        public static final int selector_mood_people=0x7f020014;
-        public static final int user_head=0x7f020015;
+        public static final int female=0x7f020005;
+        public static final int head=0x7f020006;
+        public static final int help_press=0x7f020007;
+        public static final int home=0x7f020008;
+        public static final int home_press=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int list_item_bg=0x7f02000b;
+        public static final int location=0x7f02000c;
+        public static final int me=0x7f02000d;
+        public static final int me_press=0x7f02000e;
+        public static final int people=0x7f02000f;
+        public static final int people_press=0x7f020010;
+        public static final int selector_mood_discover=0x7f020011;
+        public static final int selector_mood_help=0x7f020012;
+        public static final int selector_mood_home=0x7f020013;
+        public static final int selector_mood_me=0x7f020014;
+        public static final int selector_mood_people=0x7f020015;
+        public static final int user_head=0x7f020016;
     }
     public static final class id {
         public static final int choose_health=0x7f070002;
         public static final int choose_life=0x7f070003;
         public static final int choose_quiz=0x7f070004;
         public static final int choose_safe=0x7f070001;
-        public static final int home_fragment_listview=0x7f070005;
-        public static final int home_fragment_listview_item_headimage=0x7f070006;
-        public static final int home_fragment_listview_item_location=0x7f07000b;
-        public static final int home_fragment_listview_item_locationimage=0x7f07000a;
-        public static final int home_fragment_listview_item_nickname=0x7f070007;
-        public static final int home_fragment_listview_item_sendtime=0x7f070008;
-        public static final int home_fragment_listview_item_textview=0x7f070009;
-        public static final int icon=0x7f070018;
-        public static final int icon_help=0x7f07001a;
-        public static final int img_wb_item_V=0x7f07000e;
-        public static final int img_wb_item_content_pic=0x7f070011;
-        public static final int img_wb_item_content_subpic=0x7f070014;
-        public static final int img_wb_item_head=0x7f07000c;
-        public static final int lyt_wb_item_sublayout=0x7f070012;
+        public static final int home_fragment_listview=0x7f070006;
+        public static final int home_fragment_listview_item_headimage=0x7f070007;
+        public static final int home_fragment_listview_item_location=0x7f07000d;
+        public static final int home_fragment_listview_item_locationimage=0x7f07000c;
+        public static final int home_fragment_listview_item_nickname=0x7f070008;
+        public static final int home_fragment_listview_item_sendtime=0x7f07000a;
+        public static final int home_fragment_listview_item_seximage=0x7f070009;
+        public static final int home_fragment_listview_item_textview=0x7f07000b;
+        public static final int icon=0x7f07001a;
+        public static final int icon_help=0x7f07001c;
+        public static final int img_wb_item_V=0x7f070010;
+        public static final int img_wb_item_content_pic=0x7f070013;
+        public static final int img_wb_item_content_subpic=0x7f070016;
+        public static final int img_wb_item_head=0x7f07000e;
+        public static final int lyt_wb_item_sublayout=0x7f070014;
         public static final int realtabcontent=0x7f070000;
-        public static final int title=0x7f070019;
-        public static final int txt_wb_item_comment=0x7f070017;
-        public static final int txt_wb_item_content=0x7f070010;
-        public static final int txt_wb_item_from=0x7f070015;
-        public static final int txt_wb_item_redirect=0x7f070016;
-        public static final int txt_wb_item_subcontent=0x7f070013;
-        public static final int txt_wb_item_time=0x7f07000f;
-        public static final int txt_wb_item_uname=0x7f07000d;
+        public static final int swipe_container=0x7f070005;
+        public static final int title=0x7f07001b;
+        public static final int txt_wb_item_comment=0x7f070019;
+        public static final int txt_wb_item_content=0x7f070012;
+        public static final int txt_wb_item_from=0x7f070017;
+        public static final int txt_wb_item_redirect=0x7f070018;
+        public static final int txt_wb_item_subcontent=0x7f070015;
+        public static final int txt_wb_item_time=0x7f070011;
+        public static final int txt_wb_item_uname=0x7f07000f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

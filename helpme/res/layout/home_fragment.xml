@@ -2,19 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e2e2e2" 
+    android:background="#e2e2e2"
     android:orientation="vertical" >
-    
-    <ListView 
-    android:id="@+id/home_fragment_listview"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:cacheColorHint="#00000000"
-    android:clipToPadding="false"
-    android:divider="@null"
-    android:dividerHeight="8dp"
-    android:fadingEdge="none"
-    android:padding="8dp"
-    android:scrollbarStyle="outsideOverlay" />
+
+    <jeese.helpme.view.swiperefreshandload.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/home_fragment_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:clipToPadding="false"
+            android:divider="@null"
+            android:dividerHeight="8dp"
+            android:fadingEdge="none"
+            android:padding="8dp"
+            android:scrollbarStyle="outsideOverlay" />
+    </jeese.helpme.view.swiperefreshandload.SwipeRefreshLayout>
 
 </LinearLayout>
