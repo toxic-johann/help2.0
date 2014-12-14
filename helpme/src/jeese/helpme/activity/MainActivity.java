@@ -42,7 +42,7 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		 //使左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题
+		 //左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题
 		ActionBar actionBar = getActionBar();  
 		actionBar.setDisplayShowHomeEnabled(false);  
 		
