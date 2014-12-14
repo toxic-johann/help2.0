@@ -37,11 +37,19 @@
 
                 <TextView
                     android:id="@+id/home_fragment_listview_item_nickname"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="1dp"
-                    android:text="NickName"
+                    android:text="伊丽莎白·李大娘"
                     android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/home_fragment_listview_item_seximage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/female" />
             </LinearLayout>
 
             <LinearLayout
@@ -56,6 +64,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="2dp"
                     android:text="昨天 12：30 发出 生活求助"
+                    android:alpha="0.54"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
@@ -64,7 +73,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical" >
 
         <TextView
@@ -84,6 +93,7 @@
                 android:layout_width="12dp"
                 android:layout_height="12dp"
                 android:layout_marginTop="2dp"
+                android:alpha="0.54"
                 android:src="@drawable/location" />
 
             <TextView
@@ -92,6 +102,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="4dp"
                 android:text="广州大学城中山大学"
+                android:alpha="0.54"
                 android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
@@ -121,24 +132,24 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginLeft="24dp"
+            android:gravity="center"
             android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="收藏"
                 android:textColor="#14e715"
-                android:layout_gravity="center_horizontal"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginLeft="24dp"
+            android:gravity="center"
             android:orientation="horizontal" >
 
             <TextView
