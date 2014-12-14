@@ -16,7 +16,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class Home_Fragment extends Fragment implements OnRefreshListener,
 		OnLoadListener {
@@ -42,12 +47,15 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 
 		mListView = (ListView) mView.findViewById(R.id.home_fragment_listview);
 
-		mHomeListViewAdapter = new Home_ListView_Adapter(getActivity(), null);
+		mHomeListViewAdapter = new Home_ListView_Adapter(getActivity(), null, new ListItemButtonClickListener());
 
 		AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(
 				mHomeListViewAdapter);
 		animAdapter.setAbsListView(mListView);
 		mListView.setAdapter(animAdapter);
+		
+		mListView.setOnItemClickListener(new ListItemClickListener());
+		mListView.setOnItemLongClickListener(new ListItemLongClickListener());
 
 		mHomeListViewAdapter.addAll(getItems());
 	}
@@ -103,5 +111,35 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 		}, 1000);
 
 	}
+	
+    private final class ListItemButtonClickListener implements OnClickListener {
+        @Override
+        public void onClick(View v) {
+            for (int i = mListView.getFirstVisiblePosition(); i <= mListView.getLastVisiblePosition(); i++) {
+                if (v == mListView.getChildAt(i - mListView.getFirstVisiblePosition()).findViewById(R.id.home_fragment_listview_item_markbutton)) {
+                    Toast.makeText(getActivity(), "Clicked on Mark Action Button of List Item " + i, Toast.LENGTH_SHORT).show();
+                } else if (v == mListView.getChildAt(i - mListView.getFirstVisiblePosition()).findViewById(R.id.home_fragment_listview_item_helpbutton)) {
+                    Toast.makeText(getActivity(), "Clicked on Help Action Button of List Item " + i, Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+
+    private final class ListItemClickListener implements OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Toast.makeText(getActivity(), "Clicked on List Item " + position, Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    private final class ListItemLongClickListener implements OnItemLongClickListener {
+		@Override
+		public boolean onItemLongClick(AdapterView<?> parent, View view,
+				int position, long id) {
+			Toast.makeText(getActivity(), "LongClicked on List Item " + position, Toast.LENGTH_SHORT).show();
+			return true;
+		}
+
+    }
 
 }
