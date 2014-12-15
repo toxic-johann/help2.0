@@ -45,6 +45,8 @@ public class Home_ListView_Adapter extends ArrayAdapter<Integer> {
 					.findViewById(R.id.home_fragment_listview_item_textview);
 			viewHolder.headimage = (ImageView) view
 					.findViewById(R.id.home_fragment_listview_item_headimage);
+			viewHolder.headbutton = (ImageButton) view
+					.findViewById(R.id.home_fragment_listview_item_headbutton);
 			viewHolder.markbutton = (ImageButton) view
 					.findViewById(R.id.home_fragment_listview_item_markbutton);
 			viewHolder.helpbutton = (ImageButton) view
@@ -57,15 +59,15 @@ public class Home_ListView_Adapter extends ArrayAdapter<Integer> {
 		viewHolder.textView
 				.setText("你知道我在世界上最珍视的东西吗？那就是我自己的性格，也就是我自己思想的自由。在这个问题上我都放下刀枪了——也就是说，听任你的改造和影响。你为什么还要计较我一两次无心的过失对你的伤害呢？宽恕吧！原谅吧！我是粗心的人，别和我计较。"
 						+ (getItem(position) + 1));
-		fb.display(
-				viewHolder.headimage,
-				"http://imgsrc.baidu.com/forum/w%3D580/sign=12dad1c8b899a9013b355b3e2d970a58/91039313b07eca8068d2343b912397dda044832c.jpg");
-        
+		fb.display(viewHolder.headimage,
+				"http://p.qq181.com/cms/1210/2012100413195471481.jpg");
+
 		if (itemButtonClickListener != null) {
+			viewHolder.headbutton.setOnClickListener(itemButtonClickListener);
 			viewHolder.markbutton.setOnClickListener(itemButtonClickListener);
 			viewHolder.helpbutton.setOnClickListener(itemButtonClickListener);
-        }
-		
+		}
+
 		return view;
 	}
 
@@ -82,6 +84,7 @@ public class Home_ListView_Adapter extends ArrayAdapter<Integer> {
 	private static class ViewHolder {
 		TextView textView;
 		ImageView headimage;
+		ImageButton headbutton;
 		ImageButton markbutton;
 		ImageButton helpbutton;
 	}

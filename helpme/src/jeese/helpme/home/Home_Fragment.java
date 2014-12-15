@@ -6,10 +6,12 @@ import com.haarman.listviewanimations.swinginadapters.AnimationAdapter;
 import com.haarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 
 import jeese.helpme.R;
-import jeese.helpme.view.swiperefreshandload.SwipeRefreshLayout;
-import jeese.helpme.view.swiperefreshandload.SwipeRefreshLayout.OnLoadListener;
-import jeese.helpme.view.swiperefreshandload.SwipeRefreshLayout.OnRefreshListener;
+import jeese.helpme.location.MapPage;
+import jeese.helpme.view.SwipeRefreshLayout;
+import jeese.helpme.view.SwipeRefreshLayout.OnLoadListener;
+import jeese.helpme.view.SwipeRefreshLayout.OnRefreshListener;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -19,6 +21,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -29,6 +32,7 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 	private ListView mListView;
 	private Home_ListView_Adapter mHomeListViewAdapter;
 	private SwipeRefreshLayout mSwipeLayout;
+	private ImageButton headbutton;
 
 	@SuppressLint("ResourceAsColor")
 	@Override
@@ -47,17 +51,23 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 
 		mListView = (ListView) mView.findViewById(R.id.home_fragment_listview);
 
-		mHomeListViewAdapter = new Home_ListView_Adapter(getActivity(), null, new ListItemButtonClickListener());
+		mHomeListViewAdapter = new Home_ListView_Adapter(getActivity(), null,
+				new ListItemButtonClickListener());
 
 		AnimationAdapter animAdapter = new SwingBottomInAnimationAdapter(
 				mHomeListViewAdapter);
 		animAdapter.setAbsListView(mListView);
 		mListView.setAdapter(animAdapter);
-		
+
 		mListView.setOnItemClickListener(new ListItemClickListener());
 		mListView.setOnItemLongClickListener(new ListItemLongClickListener());
 
 		mHomeListViewAdapter.addAll(getItems());
+
+		View listitemview = View.inflate(getActivity(),
+				R.layout.home_fragment_listview_item, null);
+		headbutton = (ImageButton) listitemview
+				.findViewById(R.id.home_fragment_listview_item_headbutton);
 	}
 
 	@Override
@@ -77,7 +87,7 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 		}
 		return items;
 	}
-	
+
 	public ArrayList<Integer> getnewItems() {
 		ArrayList<Integer> items = new ArrayList<Integer>();
 		for (int i = 0; i < 3; i++) {
@@ -111,35 +121,53 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 		}, 1000);
 
 	}
-	
-    private final class ListItemButtonClickListener implements OnClickListener {
-        @Override
-        public void onClick(View v) {
-            for (int i = mListView.getFirstVisiblePosition(); i <= mListView.getLastVisiblePosition(); i++) {
-                if (v == mListView.getChildAt(i - mListView.getFirstVisiblePosition()).findViewById(R.id.home_fragment_listview_item_markbutton)) {
-                    Toast.makeText(getActivity(), "Clicked on Mark Action Button of List Item " + i, Toast.LENGTH_SHORT).show();
-                } else if (v == mListView.getChildAt(i - mListView.getFirstVisiblePosition()).findViewById(R.id.home_fragment_listview_item_helpbutton)) {
-                    Toast.makeText(getActivity(), "Clicked on Help Action Button of List Item " + i, Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
 
-    private final class ListItemClickListener implements OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Toast.makeText(getActivity(), "Clicked on List Item " + position, Toast.LENGTH_SHORT).show();
-        }
-    }
-    
-    private final class ListItemLongClickListener implements OnItemLongClickListener {
+	private final class ListItemButtonClickListener implements OnClickListener {
+		@Override
+		public void onClick(View v) {
+			for (int i = mListView.getFirstVisiblePosition(); i <= mListView
+					.getLastVisiblePosition(); i++) {
+				if (v == mListView.getChildAt(
+						i - mListView.getFirstVisiblePosition()).findViewById(
+						R.id.home_fragment_listview_item_markbutton)) {
+					Toast.makeText(getActivity(),
+							"Clicked on Mark Action Button of List Item " + i,
+							Toast.LENGTH_SHORT).show();
+				} else if (v == mListView.getChildAt(
+						i - mListView.getFirstVisiblePosition()).findViewById(
+						R.id.home_fragment_listview_item_helpbutton)) {
+					Toast.makeText(getActivity(),
+							"Clicked on Help Action Button of List Item " + i,
+							Toast.LENGTH_SHORT).show();
+					Intent gpsIntent = new Intent(getActivity(), MapPage.class);
+					startActivity(gpsIntent);
+				}
+			}
+		}
+	}
+
+	private final class ListItemClickListener implements OnItemClickListener {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			headbutton.setBackgroundResource(R.drawable.circle_press);
+			Toast.makeText(getActivity(), "Clicked on List Item " + position,
+					Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	private final class ListItemLongClickListener implements
+			OnItemLongClickListener {
 		@Override
 		public boolean onItemLongClick(AdapterView<?> parent, View view,
 				int position, long id) {
-			Toast.makeText(getActivity(), "LongClicked on List Item " + position, Toast.LENGTH_SHORT).show();
+			headbutton.setBackgroundResource(R.drawable.circle_press);
+			Toast.makeText(getActivity(),
+					"LongClicked on List Item " + position, Toast.LENGTH_SHORT)
+					.show();
 			return true;
 		}
 
-    }
+	}
 
 }
