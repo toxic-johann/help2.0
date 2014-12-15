@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">易助</string>
-    <string name="buttom_home">求助</string>
+    <string name="buttom_home">首页</string>
     <string name="buttom_discover">发现</string>
     <string name="buttom_help">help</string>
     <string name="buttom_people">人脉</string>
