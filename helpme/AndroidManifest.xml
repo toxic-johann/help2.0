@@ -47,12 +47,21 @@
 
         <activity
             android:name=".activity.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".help.SendLifeHelpActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".help.SendHelpCommentActivity"
+            android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
             android:name=".location.MapPage"

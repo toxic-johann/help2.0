@@ -1,37 +1,41 @@
 package jeese.helpme.activity;
 
 import jeese.helpme.R;
-import jeese.helpme.fragment.Discover_Fragment;
-import jeese.helpme.fragment.Help_Fragment;
-import jeese.helpme.fragment.Me_Fragment;
-import jeese.helpme.fragment.People_Fragment;
+import jeese.helpme.discover.Discover_Fragment;
+import jeese.helpme.help.Help_Fragment;
 import jeese.helpme.home.Home_Fragment;
+import jeese.helpme.me.Me_Fragment;
+import jeese.helpme.people.People_Fragment;
+import jeese.helpme.service.LocationService;
 import jeese.helpme.service.MainService;
 import jeese.helpme.util.DummyTabContent;
 import android.app.ActionBar;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 
 	TabHost tabHost;
 	TabWidget tabWidget;
 	LinearLayout bottom_layout;
-	int CURRENT_TAB = 0; // 设置常量
+	int CURRENT_TAB = 0; 
+	/**
+	 * 自定义初始界面
+	 * 0->home
+	 * 1->discover
+	 * 2->help
+	 * 3->people
+	 * 4->me
+	 */
+	int CUSTOM_TAB = 2;
 	Home_Fragment homeFragment;
 	Discover_Fragment discoverFragment;
 	Help_Fragment helpFragment;
@@ -54,6 +58,10 @@ public class MainActivity extends FragmentActivity {
 		Intent intent = new Intent(this, MainService.class);
 		startService(intent);
 
+		// 定位一次
+		Intent intent_1 = new Intent(this, LocationService.class);
+		startService(intent_1);
+
 		findTabView();
 		tabHost.setup();
 
@@ -67,32 +75,27 @@ public class MainActivity extends FragmentActivity {
 				homeFragment = (Home_Fragment) fm.findFragmentByTag("home");
 				discoverFragment = (Discover_Fragment) fm
 						.findFragmentByTag("discover");
-				helpFragment = (Help_Fragment) fm
-						.findFragmentByTag("help");
+				helpFragment = (Help_Fragment) fm.findFragmentByTag("help");
 				peopleFragment = (People_Fragment) fm
 						.findFragmentByTag("people");
 				meFragment = (Me_Fragment) fm.findFragmentByTag("me");
 				ft = fm.beginTransaction();
 
-				/** 如果存在Detaches掉 */
+				/** 如果存在hide */
 				if (homeFragment != null)
-					ft.detach(homeFragment);
+					ft.hide(homeFragment);
 
-				/** 如果存在Detaches掉 */
 				if (discoverFragment != null)
-					ft.detach(discoverFragment);
-				
-				/** 如果存在Detaches掉 */
+					ft.hide(discoverFragment);
+
 				if (helpFragment != null)
-					ft.detach(helpFragment);
+					ft.hide(helpFragment);
 
-				/** 如果存在Detaches掉 */
 				if (peopleFragment != null)
-					ft.detach(peopleFragment);
+					ft.hide(peopleFragment);
 
-				/** 如果存在Detaches掉 */
 				if (meFragment != null)
-					ft.detach(meFragment);
+					ft.hide(meFragment);
 
 				/** 如果当前选项卡是home */
 				if (tabId.equalsIgnoreCase("home")) {
@@ -103,7 +106,7 @@ public class MainActivity extends FragmentActivity {
 				} else if (tabId.equalsIgnoreCase("discover")) {
 					isTabDiscover();
 					CURRENT_TAB = 2;
-					
+
 					/** 如果当前选项卡是help */
 				} else if (tabId.equalsIgnoreCase("help")) {
 					isTabHelp();
@@ -146,13 +149,13 @@ public class MainActivity extends FragmentActivity {
 
 		};
 		// 设置初始选项卡
-		tabHost.setCurrentTab(0);
 		tabHost.setOnTabChangedListener(tabChangeListener);
 		initTab();
-		/** 设置初始化界面 */
-		tabHost.setCurrentTab(0);
+		tabHost.setCurrentTab(CUSTOM_TAB);
 
 	}
+	
+	
 
 	// 判断当前
 	public void isTabHome() {
@@ -160,7 +163,7 @@ public class MainActivity extends FragmentActivity {
 		if (homeFragment == null) {
 			ft.add(R.id.realtabcontent, new Home_Fragment(), "home");
 		} else {
-			ft.attach(homeFragment);
+			ft.show(homeFragment);
 		}
 	}
 
@@ -169,16 +172,16 @@ public class MainActivity extends FragmentActivity {
 		if (discoverFragment == null) {
 			ft.add(R.id.realtabcontent, new Discover_Fragment(), "discover");
 		} else {
-			ft.attach(discoverFragment);
+			ft.show(discoverFragment);
 		}
 	}
-	
+
 	public void isTabHelp() {
 
 		if (helpFragment == null) {
 			ft.add(R.id.realtabcontent, new Help_Fragment(), "help");
 		} else {
-			ft.attach(helpFragment);
+			ft.show(helpFragment);
 		}
 	}
 
@@ -187,7 +190,7 @@ public class MainActivity extends FragmentActivity {
 		if (peopleFragment == null) {
 			ft.add(R.id.realtabcontent, new People_Fragment(), "people");
 		} else {
-			ft.attach(peopleFragment);
+			ft.show(peopleFragment);
 		}
 	}
 
@@ -196,7 +199,7 @@ public class MainActivity extends FragmentActivity {
 		if (meFragment == null) {
 			ft.add(R.id.realtabcontent, new Me_Fragment(), "me");
 		} else {
-			ft.attach(meFragment);
+			ft.show(meFragment);
 		}
 	}
 
@@ -259,7 +262,7 @@ public class MainActivity extends FragmentActivity {
 		tSpecDiscover.setIndicator(tabIndicator2);
 		tSpecDiscover.setContent(new DummyTabContent(getBaseContext()));
 		tabHost.addTab(tSpecDiscover);
-		
+
 		TabHost.TabSpec tSpecHelp = tabHost.newTabSpec("help");
 		tSpecHelp.setIndicator(tabIndicator3);
 		tSpecHelp.setContent(new DummyTabContent(getBaseContext()));
