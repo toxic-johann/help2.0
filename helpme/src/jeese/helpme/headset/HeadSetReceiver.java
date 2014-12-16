@@ -1,5 +1,6 @@
 package jeese.helpme.headset;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +34,7 @@ public class HeadSetReceiver extends BroadcastReceiver{
 	        	if(headSetListener != null){
 	        		try {
 	        			if(keyEvent.getAction() == KeyEvent.ACTION_UP){
+	        				headSetListener.onClick();
 	        				if(isFiveClick){
 	        					myTimer.cancel();
 	        					isFiveClick = false;
@@ -77,6 +79,7 @@ public class HeadSetReceiver extends BroadcastReceiver{
 	 * 此handle的目的主要是为了将接口在主线程中触发
 	 * ，为了安全起见把接口放到主线程触发
 	 */
+	@SuppressLint("HandlerLeak")
 	Handler myHandle = new Handler(){
 
 		@Override

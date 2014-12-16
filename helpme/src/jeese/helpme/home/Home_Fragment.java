@@ -34,12 +34,25 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 	private SwipeRefreshLayout mSwipeLayout;
 	private ImageButton headbutton;
 
-	@SuppressLint("ResourceAsColor")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mView = View.inflate(getActivity(), R.layout.home_fragment, null);
+		init();
+	}
 
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		ViewGroup p = (ViewGroup) mView.getParent();
+		if (p != null) {
+			p.removeAllViewsInLayout();
+		}
+		return mView;
+	}
+	
+	@SuppressLint("ResourceAsColor")
+	private void init(){
 		mSwipeLayout = (SwipeRefreshLayout) mView
 				.findViewById(R.id.swipe_container);
 		mSwipeLayout.setOnRefreshListener(this);
@@ -68,16 +81,6 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 				R.layout.home_fragment_listview_item, null);
 		headbutton = (ImageButton) listitemview
 				.findViewById(R.id.home_fragment_listview_item_headbutton);
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		ViewGroup p = (ViewGroup) mView.getParent();
-		if (p != null) {
-			p.removeAllViewsInLayout();
-		}
-		return mView;
 	}
 
 	public ArrayList<Integer> getItems() {

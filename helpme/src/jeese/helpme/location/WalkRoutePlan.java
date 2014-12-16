@@ -24,6 +24,7 @@ import com.amap.api.navi.view.RouteOverLay;
 import java.util.ArrayList;
 
 import jeese.helpme.R;
+import jeese.helpme.service.LocationService;
 
 public class WalkRoutePlan extends Activity implements OnClickListener,
 		AMapNaviListener {

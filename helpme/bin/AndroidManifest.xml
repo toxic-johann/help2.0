@@ -30,7 +30,11 @@
             android:value="e13eb6438bb96ac5c21844d84a191066" />
 
         <service
-            android:name=".location.LocationService"
+            android:name="jeese.helpme.service.MainService"
+            android:enabled="true" >
+        </service>
+        <service
+            android:name="jeese.helpme.service.LocationService"
             android:enabled="true" >
         </service>
 
