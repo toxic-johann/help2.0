@@ -5,7 +5,7 @@ import net.tsz.afinal.http.AjaxCallBack;
 import net.tsz.afinal.http.AjaxParams;
 import jeese.helpme.R;
 import jeese.helpme.activity.MainActivity;
-import jeese.helpme.location.LocationService;
+import jeese.helpme.service.LocationService;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -74,9 +74,7 @@ public class SendLifeHelpActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				//点击取消按钮跳转到MainActivity
-				Intent intent=new Intent(SendLifeHelpActivity.this, MainActivity.class);
-				startActivity(intent);
+				//点击取消按钮返回
 				finish();
 			}
 		});

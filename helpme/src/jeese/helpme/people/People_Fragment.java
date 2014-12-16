@@ -1,4 +1,4 @@
-package jeese.helpme.fragment;
+package jeese.helpme.people;
 
 import jeese.helpme.R;
 import android.os.Bundle;

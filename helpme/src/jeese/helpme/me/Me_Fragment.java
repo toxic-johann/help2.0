@@ -1,4 +1,4 @@
-package jeese.helpme.fragment;
+package jeese.helpme.me;
 
 import jeese.helpme.R;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Discover_Fragment extends Fragment {
+public class Me_Fragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -18,6 +18,6 @@ public class Discover_Fragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		return inflater.inflate(R.layout.discover_fragment, container, false);
+		return inflater.inflate(R.layout.me_fragment, container, false);
 	}
 }

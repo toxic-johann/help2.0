@@ -1,6 +1,8 @@
-package jeese.helpme.fragment;
+package jeese.helpme.help;
 
 import jeese.helpme.R;
+import jeese.helpme.location.MapPage;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -50,7 +52,8 @@ public class Help_Fragment extends Fragment implements OnClickListener {
 		switch (v.getId()) {
 
 		case R.id.help_fragment_helpbutton_1:
-
+			Intent gpsIntent = new Intent(getActivity(), SendLifeHelpActivity.class);
+			startActivity(gpsIntent);
 			break;
 
 		case R.id.help_fragment_helpbutton_2:
