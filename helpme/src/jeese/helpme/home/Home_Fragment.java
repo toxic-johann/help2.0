@@ -6,7 +6,7 @@ import com.haarman.listviewanimations.swinginadapters.AnimationAdapter;
 import com.haarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 
 import jeese.helpme.R;
-import jeese.helpme.location.MapPage;
+import jeese.helpme.location.MapActivity;
 import jeese.helpme.view.SwipeRefreshLayout;
 import jeese.helpme.view.SwipeRefreshLayout.OnLoadListener;
 import jeese.helpme.view.SwipeRefreshLayout.OnRefreshListener;
@@ -32,7 +32,6 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 	private ListView mListView;
 	private Home_ListView_Adapter mHomeListViewAdapter;
 	private SwipeRefreshLayout mSwipeLayout;
-	private ImageButton headbutton;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -79,8 +78,6 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 
 		View listitemview = View.inflate(getActivity(),
 				R.layout.home_fragment_listview_item, null);
-		headbutton = (ImageButton) listitemview
-				.findViewById(R.id.home_fragment_listview_item_headbutton);
 	}
 
 	public ArrayList<Integer> getItems() {
@@ -142,8 +139,8 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 					Toast.makeText(getActivity(),
 							"Clicked on Help Action Button of List Item " + i,
 							Toast.LENGTH_SHORT).show();
-					Intent gpsIntent = new Intent(getActivity(), MapPage.class);
-					startActivity(gpsIntent);
+					Intent Intent = new Intent(getActivity(), MapActivity.class);
+					startActivity(Intent);
 				}
 			}
 		}
@@ -153,9 +150,8 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			headbutton.setBackgroundResource(R.drawable.circle_press);
-			Toast.makeText(getActivity(), "Clicked on List Item " + position,
-					Toast.LENGTH_SHORT).show();
+			Intent Intent = new Intent(getActivity(), HelpDetailsVisitorActivity.class);
+			startActivity(Intent);
 		}
 	}
 
@@ -164,7 +160,6 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 		@Override
 		public boolean onItemLongClick(AdapterView<?> parent, View view,
 				int position, long id) {
-			headbutton.setBackgroundResource(R.drawable.circle_press);
 			Toast.makeText(getActivity(),
 					"LongClicked on List Item " + position, Toast.LENGTH_SHORT)
 					.show();

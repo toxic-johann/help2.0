@@ -9,6 +9,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+import android.widget.Toast;
 
 public class MainService extends Service {
 
@@ -94,6 +95,9 @@ public class MainService extends Service {
 		@Override
 		public void onClick() {
 			System.out.println("按了一下");
+			Toast.makeText(getApplicationContext(),
+					"按了一下求助按钮",
+					Toast.LENGTH_SHORT).show();
 			AjaxParams params = new AjaxParams();
 			params.put("username", "michael yang");
 			params.put("password", "123456");
