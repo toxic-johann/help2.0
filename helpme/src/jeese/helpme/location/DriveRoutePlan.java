@@ -3,6 +3,7 @@ package jeese.helpme.location;
 import java.util.ArrayList;
 
 import jeese.helpme.R;
+import jeese.helpme.service.LocationService;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -67,30 +67,18 @@ public final class R {
         public static final int home_fragment_listview_item_sendtime=0x7f07000e;
         public static final int home_fragment_listview_item_seximage=0x7f07000d;
         public static final int home_fragment_listview_item_textview=0x7f07000f;
-        public static final int icon=0x7f070025;
-        public static final int icon_help=0x7f070027;
-        public static final int img_wb_item_V=0x7f070016;
-        public static final int img_wb_item_content_pic=0x7f070019;
-        public static final int img_wb_item_content_subpic=0x7f07001c;
-        public static final int img_wb_item_head=0x7f070014;
-        public static final int lyt_wb_item_sublayout=0x7f07001a;
-        public static final int mappage_drive=0x7f070022;
-        public static final int mappage_mapview=0x7f070020;
-        public static final int mappage_transit=0x7f070023;
-        public static final int mappage_walk=0x7f070021;
+        public static final int icon=0x7f070019;
+        public static final int icon_help=0x7f07001b;
+        public static final int mappage_drive=0x7f070016;
+        public static final int mappage_mapview=0x7f070014;
+        public static final int mappage_transit=0x7f070017;
+        public static final int mappage_walk=0x7f070015;
         public static final int realtabcontent=0x7f070000;
-        public static final int simplenavimap=0x7f070024;
+        public static final int simplenavimap=0x7f070018;
         public static final int swipe_container=0x7f070008;
-        public static final int title=0x7f070026;
-        public static final int txt_wb_item_comment=0x7f07001f;
-        public static final int txt_wb_item_content=0x7f070018;
-        public static final int txt_wb_item_from=0x7f07001d;
-        public static final int txt_wb_item_redirect=0x7f07001e;
-        public static final int txt_wb_item_subcontent=0x7f07001b;
-        public static final int txt_wb_item_time=0x7f070017;
-        public static final int txt_wb_item_uname=0x7f070015;
-        public static final int walknav_mapview=0x7f070028;
-        public static final int walknav_walk=0x7f070029;
+        public static final int title=0x7f07001a;
+        public static final int walknav_mapview=0x7f07001c;
+        public static final int walknav_walk=0x7f07001d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -100,14 +88,13 @@ public final class R {
         public static final int help_dialog=0x7f030004;
         public static final int home_fragment=0x7f030005;
         public static final int home_fragment_listview_item=0x7f030006;
-        public static final int listviewsample=0x7f030007;
-        public static final int mappage=0x7f030008;
-        public static final int me_fragment=0x7f030009;
-        public static final int navipage=0x7f03000a;
-        public static final int people_fragment=0x7f03000b;
-        public static final int tab_indicator=0x7f03000c;
-        public static final int tab_indicator_help=0x7f03000d;
-        public static final int walknav=0x7f03000e;
+        public static final int mappage=0x7f030007;
+        public static final int me_fragment=0x7f030008;
+        public static final int navipage=0x7f030009;
+        public static final int people_fragment=0x7f03000a;
+        public static final int tab_indicator=0x7f03000b;
+        public static final int tab_indicator_help=0x7f03000c;
+        public static final int walknav=0x7f03000d;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

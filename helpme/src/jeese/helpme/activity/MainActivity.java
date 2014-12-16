@@ -5,10 +5,12 @@ import jeese.helpme.fragment.Discover_Fragment;
 import jeese.helpme.fragment.Me_Fragment;
 import jeese.helpme.fragment.People_Fragment;
 import jeese.helpme.home.Home_Fragment;
+import jeese.helpme.service.MainService;
 import jeese.helpme.util.DummyTabContent;
 import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -41,11 +43,15 @@ public class MainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		 //左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题
-		ActionBar actionBar = getActionBar();  
-		actionBar.setDisplayShowHomeEnabled(false);  
-		
+
+		// 左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayShowHomeEnabled(false);
+
+		// 开启后台服务
+		Intent intent = new Intent(this, MainService.class);
+		startService(intent);
+
 		findTabView();
 		tabHost.setup();
 

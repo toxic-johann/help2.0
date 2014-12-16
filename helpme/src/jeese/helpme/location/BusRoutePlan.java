@@ -1,6 +1,7 @@
 package jeese.helpme.location;
 
 import jeese.helpme.R;
+import jeese.helpme.service.LocationService;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
