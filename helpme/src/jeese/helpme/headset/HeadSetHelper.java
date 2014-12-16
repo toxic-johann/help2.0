@@ -31,6 +31,7 @@ public class HeadSetHelper {
 	 * 请务必在设置接口监听之后再调用此方法，否则接口无效
 	 * @param context
 	 */
+	@SuppressWarnings("deprecation")
 	public void open(Context context){
 		AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 		ComponentName name = new ComponentName(context.getPackageName(),
@@ -41,6 +42,7 @@ public class HeadSetHelper {
 	 * 关闭耳机线控监听
 	 * @param context
 	 */
+	@SuppressWarnings("deprecation")
 	public void close(Context context){
 		AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 		ComponentName name = new ComponentName(context.getPackageName(),
@@ -74,5 +76,9 @@ public class HeadSetHelper {
 		 * 两秒内按五次触发，此接口在主线程，可以放心使用
 		 */
 		public void onFiveClick();
+		/**
+		 * 按一次触发，调试用
+		 */
+		public void onClick();
 	}
 }

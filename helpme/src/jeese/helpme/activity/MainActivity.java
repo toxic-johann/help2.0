@@ -2,13 +2,16 @@ package jeese.helpme.activity;
 
 import jeese.helpme.R;
 import jeese.helpme.fragment.Discover_Fragment;
+import jeese.helpme.fragment.Help_Fragment;
 import jeese.helpme.fragment.Me_Fragment;
 import jeese.helpme.fragment.People_Fragment;
 import jeese.helpme.home.Home_Fragment;
+import jeese.helpme.service.MainService;
 import jeese.helpme.util.DummyTabContent;
 import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -31,6 +34,7 @@ public class MainActivity extends FragmentActivity {
 	int CURRENT_TAB = 0; // 设置常量
 	Home_Fragment homeFragment;
 	Discover_Fragment discoverFragment;
+	Help_Fragment helpFragment;
 	People_Fragment peopleFragment;
 	Me_Fragment meFragment;
 	android.support.v4.app.FragmentTransaction ft;
@@ -41,11 +45,15 @@ public class MainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		 //左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题
-		ActionBar actionBar = getActionBar();  
-		actionBar.setDisplayShowHomeEnabled(false);  
-		
+
+		// 左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayShowHomeEnabled(false);
+
+		// 开启后台服务
+		Intent intent = new Intent(this, MainService.class);
+		startService(intent);
+
 		findTabView();
 		tabHost.setup();
 
@@ -59,6 +67,8 @@ public class MainActivity extends FragmentActivity {
 				homeFragment = (Home_Fragment) fm.findFragmentByTag("home");
 				discoverFragment = (Discover_Fragment) fm
 						.findFragmentByTag("discover");
+				helpFragment = (Help_Fragment) fm
+						.findFragmentByTag("help");
 				peopleFragment = (People_Fragment) fm
 						.findFragmentByTag("people");
 				meFragment = (Me_Fragment) fm.findFragmentByTag("me");
@@ -71,6 +81,10 @@ public class MainActivity extends FragmentActivity {
 				/** 如果存在Detaches掉 */
 				if (discoverFragment != null)
 					ft.detach(discoverFragment);
+				
+				/** 如果存在Detaches掉 */
+				if (helpFragment != null)
+					ft.detach(helpFragment);
 
 				/** 如果存在Detaches掉 */
 				if (peopleFragment != null)
@@ -89,16 +103,21 @@ public class MainActivity extends FragmentActivity {
 				} else if (tabId.equalsIgnoreCase("discover")) {
 					isTabDiscover();
 					CURRENT_TAB = 2;
+					
+					/** 如果当前选项卡是help */
+				} else if (tabId.equalsIgnoreCase("help")) {
+					isTabHelp();
+					CURRENT_TAB = 3;
 
 					/** 如果当前选项卡是people */
 				} else if (tabId.equalsIgnoreCase("people")) {
 					isTabPeople();
-					CURRENT_TAB = 3;
+					CURRENT_TAB = 4;
 
 					/** 如果当前选项卡是me */
 				} else if (tabId.equalsIgnoreCase("me")) {
 					isTabMe();
-					CURRENT_TAB = 4;
+					CURRENT_TAB = 5;
 				} else {
 					switch (CURRENT_TAB) {
 					case 1:
@@ -108,9 +127,12 @@ public class MainActivity extends FragmentActivity {
 						isTabDiscover();
 						break;
 					case 3:
-						isTabPeople();
+						isTabHelp();
 						break;
 					case 4:
+						isTabPeople();
+						break;
+					case 5:
 						isTabMe();
 						break;
 					default:
@@ -148,6 +170,15 @@ public class MainActivity extends FragmentActivity {
 			ft.add(R.id.realtabcontent, new Discover_Fragment(), "discover");
 		} else {
 			ft.attach(discoverFragment);
+		}
+	}
+	
+	public void isTabHelp() {
+
+		if (helpFragment == null) {
+			ft.add(R.id.realtabcontent, new Help_Fragment(), "help");
+		} else {
+			ft.attach(helpFragment);
 		}
 	}
 
@@ -224,33 +255,15 @@ public class MainActivity extends FragmentActivity {
 		tSpecHome.setContent(new DummyTabContent(getBaseContext()));
 		tabHost.addTab(tSpecHome);
 
-		TabHost.TabSpec tSpecWall = tabHost.newTabSpec("discover");
-		tSpecWall.setIndicator(tabIndicator2);
-		tSpecWall.setContent(new DummyTabContent(getBaseContext()));
-		tabHost.addTab(tSpecWall);
-
-		TabHost.TabSpec tSpecCamera = tabHost.newTabSpec("camera");
-		tSpecCamera.setIndicator(tabIndicator3);
-		tSpecCamera.setContent(new DummyTabContent(getBaseContext()));
-		tabHost.addTab(tSpecCamera);
-
-		// 拍照按钮监听事件，弹出dialog
-		tabIndicator3.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-
-				Dialog choose = new Dialog(MainActivity.this,
-						R.style.draw_dialog);
-				choose.setContentView(R.layout.help_dialog);
-
-				// 设置背景模糊参数
-				WindowManager.LayoutParams winlp = choose.getWindow()
-						.getAttributes();
-				winlp.alpha = 0.9f; // 0.0-1.0
-				choose.getWindow().setAttributes(winlp);
-				choose.show();// 显示弹出框
-			}
-		});
+		TabHost.TabSpec tSpecDiscover = tabHost.newTabSpec("discover");
+		tSpecDiscover.setIndicator(tabIndicator2);
+		tSpecDiscover.setContent(new DummyTabContent(getBaseContext()));
+		tabHost.addTab(tSpecDiscover);
+		
+		TabHost.TabSpec tSpecHelp = tabHost.newTabSpec("help");
+		tSpecHelp.setIndicator(tabIndicator3);
+		tSpecHelp.setContent(new DummyTabContent(getBaseContext()));
+		tabHost.addTab(tSpecHelp);
 
 		TabHost.TabSpec tSpecPeople = tabHost.newTabSpec("people");
 		tSpecPeople.setIndicator(tabIndicator4);
@@ -263,23 +276,5 @@ public class MainActivity extends FragmentActivity {
 		tabHost.addTab(tSpecMe);
 
 	}
-
-	DialogInterface.OnClickListener dialog = new DialogInterface.OnClickListener() {
-
-		@Override
-		public void onClick(DialogInterface dialog, int which) {
-			switch (which) {
-			case 1:
-				Toast.makeText(MainActivity.this, "点击了——1", Toast.LENGTH_LONG)
-						.show();
-				break;
-			case 2:
-				Toast.makeText(MainActivity.this, "点击了——2", Toast.LENGTH_LONG)
-						.show();
-				break;
-			}
-
-		}
-	};
 
 }
