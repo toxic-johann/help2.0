@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- 顶部标题 -->
+
+     <RelativeLayout  
+        android:id="@+id/send_bar"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:background="@drawable/compose_toolbar_background"
+        android:gravity="center"
+        android:layout_gravity="fill_vertical"
+        android:orientation="horizontal" >
+        
+        <Button
+            android:id="@+id/cancel_send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="#00000000"
+            android:textColor="#FF9912"
+            android:text="取消" />
+        
+        <LinearLayout  
+            android:id="@+id/life_send_middle"  
+            android:layout_width="wrap_content"  
+        	android:layout_height="wrap_content"  
+        	android:gravity="center"
+        	android:layout_toRightOf="@+id/cancel_send_btn"
+        	android:layout_toLeftOf="@+id/send_btn"
+        	android:orientation="vertical" >
+        	
+        	<TextView
+        	    android:id="@+id/life_send_middle1"
+        	    android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="发求助"
+            	android:textColor="#000000"
+            	android:textSize="20sp" />
+        	<TextView
+            	android:id="@+id/life_send_username"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:textColor="#000000"
+            	android:text="ShiLiuJieEr"/>
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/send_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="#00000000"
+        android:textColor="#808A87"
+        android:text="发送" />
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/center_relat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/send_bar" >
+    
+    <EditText
+        android:id="@+id/edit_lifehelp_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="#000000"
+        android:layout_margin="3dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:cursorVisible="true"
+        android:background="@null"
+        android:hint="请输入生活求助信息..." />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/compose_toolbar_background"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="4" >
+
+            <ImageView
+                android:id="@+id/send_cose_camera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="doclick"
+                android:scaleType="center"
+                android:src="@drawable/compose_camerabutton_background" />
+
+            <ImageView
+                android:id="@+id/send_cose_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="doclick"
+                android:scaleType="center"
+                android:src="@drawable/compose_picsbutton_background" />
+
+            <ImageView
+                android:id="@+id/send_cose_mention"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="doclick"
+                android:scaleType="center"
+                android:src="@drawable/compose_mentionbutton_background" />
+
+            <ImageView
+                android:id="@+id/send_cose_emotion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="doclick"
+                android:scaleType="center"
+                android:src="@drawable/compose_emoticonbutton_background" />
+
+            
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/send_tvlocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_above="@+id/linearLayout1"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/compose_locatebutton_background_succeeded1"
+            android:gravity="center_vertical"
+            android:text="显示位置"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+        <TextView
+            android:id="@+id/choose_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_above="@+id/linearLayout1"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/compose_locatebutton_background_succeeded"
+            android:gravity="center_vertical"
+            android:text="公开"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/send_shoseimgview"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:scaleType="fitCenter"
+            android:layout_above="@+id/send_tvlocation"
+            android:layout_alignParentLeft="true"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
