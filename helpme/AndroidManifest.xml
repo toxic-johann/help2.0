@@ -56,6 +56,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".home.HelpDetailsOwnerActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".home.HelpDetailsVisitorActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
             android:name=".help.SendLifeHelpActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
@@ -64,23 +72,23 @@
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.MapPage"
+            android:name=".location.MapActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.NaviPage"
+            android:name=".location.NaviActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.WalkRoutePlan"
+            android:name=".location.WalkRoutePlanActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.DriveRoutePlan"
+            android:name=".location.DriveRoutePlanActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.BusRoutePlan"
+            android:name=".location.BusRoutePlanActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
     </application>
