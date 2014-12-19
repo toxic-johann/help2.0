@@ -47,6 +47,7 @@
 
         <activity
             android:name=".activity.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,23 +56,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".location.MapPage"
+            android:name=".home.HelpDetailsOwnerActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.NaviPage"
+            android:name=".home.HelpDetailsVisitorActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.WalkRoutePlan"
+            android:name=".help.SendLifeHelpActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.DriveRoutePlan"
+            android:name=".help.SendHelpCommentActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-            android:name=".location.BusRoutePlan"
+            android:name=".location.MapActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".location.NaviActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".location.WalkRoutePlanActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".location.DriveRoutePlanActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name=".location.BusRoutePlanActivity"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
     </application>
