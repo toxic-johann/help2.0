@@ -18,5 +18,5 @@
     <item android:drawable="@drawable/help_press" 
         android:state_checked="true" 
         android:state_enabled="true"/>
-    <item android:drawable="@drawable/home_press"/>
+    <item android:drawable="@drawable/help_normal"/>
 </selector>

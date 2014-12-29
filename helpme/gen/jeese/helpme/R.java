@@ -23,57 +23,73 @@ public final class R {
         public static final int chenghuang=0x7f050009;
         public static final int gray=0x7f050008;
         public static final int green=0x7f050005;
+        /** 澄黄色
+         */
+        public static final int huise=0x7f05000a;
         public static final int light_blue=0x7f050004;
         public static final int light_grey=0x7f050000;
         public static final int orange=0x7f050006;
         public static final int red=0x7f050007;
         public static final int super_light_grey=0x7f050001;
+        /** 灰色 
+         */
+        public static final int tabhost=0x7f05000b;
+        /** 低栏背景色
+         */
+        public static final int tabhost1=0x7f05000c;
+        /** 低栏分割栏颜色
+         */
+        public static final int tabtext1=0x7f05000d;
+        /** 灰色底栏字体
+         */
+        public static final int tabtext2=0x7f05000e;
         public static final int white=0x7f050002;
     }
     public static final class drawable {
-        public static final int all_pressed=0x7f020000;
-        public static final int amber=0x7f020001;
-        public static final int card_normal=0x7f020002;
-        public static final int card_press=0x7f020003;
-        public static final int circle_normal=0x7f020004;
-        public static final int circle_press=0x7f020005;
-        public static final int compose_camerabutton_background=0x7f020006;
-        public static final int compose_emoticonbutton_background=0x7f020007;
-        public static final int compose_locatebutton_background_succeeded=0x7f020008;
-        public static final int compose_locatebutton_background_succeeded1=0x7f020009;
-        public static final int compose_mentionbutton_background=0x7f02000a;
-        public static final int compose_picsbutton_background=0x7f02000b;
-        public static final int compose_toolbar_background=0x7f02000c;
-        public static final int compose_toolbar_more=0x7f02000d;
-        public static final int deep_orange=0x7f02000e;
-        public static final int discover=0x7f02000f;
-        public static final int discover_press=0x7f020010;
-        public static final int female=0x7f020011;
-        public static final int head=0x7f020012;
-        public static final int heart=0x7f020013;
-        public static final int help_bg=0x7f020014;
-        public static final int help_press=0x7f020015;
-        public static final int help_slogan=0x7f020016;
-        public static final int home=0x7f020017;
-        public static final int home_press=0x7f020018;
-        public static final int ic_launcher=0x7f020019;
-        public static final int list_item_bg=0x7f02001a;
-        public static final int location=0x7f02001b;
-        public static final int mark=0x7f02001c;
-        public static final int me=0x7f02001d;
+        public static final int amber=0x7f020000;
+        public static final int card_normal=0x7f020001;
+        public static final int card_press=0x7f020002;
+        public static final int circle_normal=0x7f020003;
+        public static final int circle_press=0x7f020004;
+        public static final int compose_camerabutton_background=0x7f020005;
+        public static final int compose_emoticonbutton_background=0x7f020006;
+        public static final int compose_locatebutton_background_succeeded=0x7f020007;
+        public static final int compose_locatebutton_background_succeeded1=0x7f020008;
+        public static final int compose_mentionbutton_background=0x7f020009;
+        public static final int compose_picsbutton_background=0x7f02000a;
+        public static final int compose_toolbar_background=0x7f02000b;
+        public static final int compose_toolbar_more=0x7f02000c;
+        public static final int deep_orange=0x7f02000d;
+        public static final int discover_normal=0x7f02000e;
+        public static final int discover_press=0x7f02000f;
+        public static final int female=0x7f020010;
+        public static final int head=0x7f020011;
+        public static final int heart=0x7f020012;
+        public static final int help_normal=0x7f020013;
+        public static final int help_press=0x7f020014;
+        public static final int help_slogan=0x7f020015;
+        public static final int home_normal=0x7f020016;
+        public static final int home_press=0x7f020017;
+        public static final int ic_launcher=0x7f020018;
+        public static final int list_item_bg=0x7f020019;
+        public static final int location=0x7f02001a;
+        public static final int mark=0x7f02001b;
+        public static final int me=0x7f02001c;
+        public static final int me_normal=0x7f02001d;
         public static final int me_press=0x7f02001e;
         public static final int orange=0x7f02001f;
         public static final int people=0x7f020020;
-        public static final int people_press=0x7f020021;
-        public static final int pink=0x7f020022;
-        public static final int red=0x7f020023;
-        public static final int selector_mood_discover=0x7f020024;
-        public static final int selector_mood_help=0x7f020025;
-        public static final int selector_mood_home=0x7f020026;
-        public static final int selector_mood_me=0x7f020027;
-        public static final int selector_mood_people=0x7f020028;
-        public static final int user_head=0x7f020029;
-        public static final int yellow=0x7f02002a;
+        public static final int people_normal=0x7f020021;
+        public static final int people_press=0x7f020022;
+        public static final int pink=0x7f020023;
+        public static final int red=0x7f020024;
+        public static final int selector_mood_discover=0x7f020025;
+        public static final int selector_mood_help=0x7f020026;
+        public static final int selector_mood_home=0x7f020027;
+        public static final int selector_mood_me=0x7f020028;
+        public static final int selector_mood_people=0x7f020029;
+        public static final int user_head=0x7f02002a;
+        public static final int yellow=0x7f02002b;
     }
     public static final class id {
         public static final int busnav_mapview=0x7f080001;
@@ -108,8 +124,8 @@ public final class R {
         public static final int home_fragment_listview_item_sendtime=0x7f080018;
         public static final int home_fragment_listview_item_seximage=0x7f080017;
         public static final int home_fragment_listview_item_textview=0x7f080019;
-        public static final int icon=0x7f080033;
-        public static final int icon_help=0x7f080035;
+        public static final int icon=0x7f080034;
+        public static final int icon_help=0x7f080036;
         public static final int life_send_middle=0x7f080025;
         public static final int life_send_middle1=0x7f080027;
         public static final int life_send_username=0x7f080028;
@@ -129,9 +145,10 @@ public final class R {
         public static final int send_tvlocation=0x7f080030;
         public static final int simplenavimap=0x7f080022;
         public static final int swipe_container=0x7f080012;
-        public static final int title=0x7f080034;
-        public static final int walknav_mapview=0x7f080036;
-        public static final int walknav_walk=0x7f080037;
+        public static final int tabhost_seperator=0x7f080033;
+        public static final int title=0x7f080035;
+        public static final int walknav_mapview=0x7f080037;
+        public static final int walknav_walk=0x7f080038;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -162,15 +179,18 @@ public final class R {
         public static final int buttom_people=0x7f060004;
     }
     public static final class style {
-        public static final int ActivityAnimation=0x7f070002;
+        public static final int AcBar_titleStyle=0x7f070003;
+        public static final int ActivityAnimation=0x7f070004;
         /** 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
 
+
         
          */
         public static final int AppBaseTheme=0x7f070000;
         public static final int AppTheme=0x7f070001;
+        public static final int my_actionbar_style=0x7f070002;
     }
 }
