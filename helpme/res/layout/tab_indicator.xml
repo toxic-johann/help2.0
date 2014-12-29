@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="0dip"
-    android:layout_height="64dip"
-    android:layout_marginLeft="-3dip"
-    android:layout_marginRight="-3dip"
+    android:layout_height="54dp"
+    android:layout_marginLeft="-3dp"
+    android:layout_marginRight="-3dp"
     android:layout_weight="1"
     android:orientation="vertical" >
-
+    <View
+        android:id="@+id/tabhost_seperator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/tabhost1" />
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
         android:contentDescription="@null"
+        android:scaleType="centerInside"
+        android:layout_marginTop="6dp"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -19,7 +25,9 @@
         style="?android:attr/tabWidgetStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="#757575"
+        android:layout_marginBottom="4dp"
+        android:textSize="12dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
