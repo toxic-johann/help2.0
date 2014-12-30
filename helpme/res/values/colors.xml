@@ -8,8 +8,9 @@
     <color name="green">#259b24</color>
     <color name="orange">#ff9800</color>
     <color name="red">#e51c23</color>
-    
+	
     <color name="gray">#808A87</color><!--灰色 -->
+    <color name="dark_gray">#585858</color><!--深灰色 -->
 	<color name="chenghuang">#FF9912</color><!--澄黄色-->
 	<color name="huise">#DADADA</color><!--灰色 -->
 	<color name="tabhost">#FCFCFC</color><!--低栏背景色-->

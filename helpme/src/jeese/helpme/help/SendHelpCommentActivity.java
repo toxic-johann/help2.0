@@ -14,10 +14,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class SendHelpCommentActivity extends Activity {
-	private Button senHelpCommentBtn;
+	private Button sendHelpCommentBtn;
 	private EditText editHelpComment;
 	private Button sendCancelBtn;
 	private static final String SERVER_URL="http://120.24.208.130:8080/api/";
@@ -28,16 +29,20 @@ public class SendHelpCommentActivity extends Activity {
 		setContentView(R.layout.send_comment);
 		
 		 editHelpComment=(EditText) findViewById(R.id.edit_lifehelp_text);
-	     senHelpCommentBtn=(Button) findViewById(R.id.send_btn);
+	     sendHelpCommentBtn=(Button) findViewById(R.id.send_btn);
 	     sendCancelBtn=(Button) findViewById(R.id.cancel_send_btn);
 	     
-	     senHelpCommentBtn.setOnClickListener(new OnClickListener() {
+	     sendHelpCommentBtn.setOnClickListener(new OnClickListener() {
 				
 				@Override
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					String content = editHelpComment.getText().toString();
 
+					if(content.equals("")){
+						Toast.makeText(getApplicationContext(), "发布的内容不能为空", Toast.LENGTH_SHORT).show();
+						return;
+					}
 					
 					AjaxParams params=new AjaxParams();
 					params.put("username", "xiaoming");
@@ -70,7 +75,9 @@ public class SendHelpCommentActivity extends Activity {
 					finish();
 				}
 			});
-		     
+		     /**
+		      *	根据输入文本的变化更改确认按钮的字体颜色
+		      */
 		     editHelpComment.addTextChangedListener(new TextWatcher() {
 					
 					@Override
@@ -78,9 +85,9 @@ public class SendHelpCommentActivity extends Activity {
 						// 根据输入文本的变化更改确认按钮的字体颜色
 						String str = editHelpComment.getText().toString();
 						if(str.equals("")){
-							senHelpCommentBtn.setTextColor(getResources().getColor(R.color.gray));
+							sendHelpCommentBtn.setTextColor(getResources().getColor(R.color.gray));
 						}else{
-							senHelpCommentBtn.setTextColor(getResources().getColor(R.color.chenghuang));
+							sendHelpCommentBtn.setTextColor(getResources().getColor(R.color.dark_gray));
 						}	
 					}
 					@Override

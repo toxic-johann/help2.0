@@ -4,6 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
@@ -65,10 +66,42 @@
         </activity>
         <activity
             android:name=".help.SendLifeHelpActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
             android:configChanges="orientation|keyboardHidden" >
+        </activity>
+         <activity
+            android:name="jeese.helpme.photoUtil.PhotoActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >           
+        </activity>
+          <activity
+            android:name="jeese.helpme.help.ChooseHelpRange"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:label="@string/app_name">           
         </activity>
         <activity
             android:name=".help.SendHelpCommentActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="jeese.helpme.help.SendQuestionActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="jeese.helpme.photoUtil.ChoosePicActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="jeese.helpme.photoUtil.ImageGridActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <activity
+            android:name="jeese.helpme.help.SendQAActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
             android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
