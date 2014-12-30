@@ -4,12 +4,24 @@
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+        <item name="android:actionMenuTextColor">#FFFFFF</item>
+        <item name="android:actionBarStyle">@style/my_actionbar_style</item>
+    </style>
+
+    <style name="my_actionbar_style" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#FFC600</item>
+        <item name="android:titleTextStyle">@style/AcBar_titleStyle</item>
+    </style>
+
+    <style name="AcBar_titleStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
     </style>
 
     <style name="ActivityAnimation" parent="@android:style/Animation.Activity">

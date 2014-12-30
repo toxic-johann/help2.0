@@ -21,7 +21,6 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -76,8 +75,6 @@ public class Home_Fragment extends Fragment implements OnRefreshListener,
 
 		mHomeListViewAdapter.addAll(getItems());
 
-		View listitemview = View.inflate(getActivity(),
-				R.layout.home_fragment_listview_item, null);
 	}
 
 	public ArrayList<Integer> getItems() {

@@ -11,4 +11,9 @@
     
     <color name="gray">#808A87</color><!--灰色 -->
 	<color name="chenghuang">#FF9912</color><!--澄黄色-->
+	<color name="huise">#DADADA</color><!--灰色 -->
+	<color name="tabhost">#FCFCFC</color><!--低栏背景色-->
+	<color name="tabhost1">#D6D6D6</color><!--低栏分割栏颜色-->
+	<color name="tabtext1">#757575</color><!--灰色底栏字体-->
+	<color name="tabtext2">#FFC600</color><!--橙色底栏字体-->
 </resources>
